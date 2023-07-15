@@ -1,10 +1,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+
 /**
- * main - dertermine if a random number is positive, negative or zero.
+ * main - entry point
  *
- * Return: 0 on success
+ * Return:always return 0
+ *
  */
 int main(void)
 {
@@ -12,18 +14,15 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	/* your code goes there */
-	if (n > 0)
+	if (n < 0)
 	{
-		std::cout << "is positive" << std::endl;
-	}
-	else if (n < 0)
+		printf("%d is negative\n", n);
+	} else if (n == 0)
 	{
-		std::cout << "is negative" << std::endl;
-	}
-	else 
+		printf("%d is zero\n", n);
+	} else
 	{
-		std::cout << "is zero" << std::endl;
+		printf("%d is positive\n", n);
 	}
 	return (0);
-}	
+}
