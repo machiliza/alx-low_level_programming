@@ -1,31 +1,40 @@
-include <stdio.h>
+#include <stdio.h>
+
 /**
- * main - entry point
+ * main - Entry point
  *
- * Return: alway returns 0
- *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int i;
-	int j;
+	int a;
+	int b;
+	int c;
+	int d;
+	int count = 10;
 
-	for (i = 0; i <= 99; i++)
+	for (a = 0; a < count; ++a)
 	{
-		for (j = i + 1; j <= 99; j++)
+		for (b = 0; b < count; ++b)
 		{
-			putchar(i / 10 + '0');
-			putchar(i % 10 + '0');
-			putchar(' ');
-			putchar(j / 10 + '0');
-			putchar(j % 10 + '0');
-
-			if (!(i == 98 && j == 99))
+			for (c = a; c < count; ++c)
 			{
-				putchar(',');
-				putchar(' ');
-			}
-		}
+				for (d = ((a == c) ? (b + 1) : 0); d < count; ++d)
+				{
+					putchar(a + 48);
+					putchar(b + 48);
+					putchar(' ');
+					putchar(c + 48);
+					putchar(d + 48);
+					if ((a < (count - 1)) || (b < (count - 2)) ||
+							(c < (count - 1)) || (d < (count - 1)))
+					{
+						putchar(',');
+						putchar(' ');
+					}
+				}
+			};
+		};
 	}
 	putchar('\n');
 	return (0);
